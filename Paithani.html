@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sarees</title>
+	 <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="stylepaithanis.css">
+<style>
+
+</style>
+
+</head>
+<body>
+ <div class="main">
+
+<h2>Sarees</h2>
+
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('paithani')">Paithani</button>
+   <button class="btn" onclick="filterSelection('banarasi')">Banarasi</button>
+  <button class="btn" onclick="filterSelection('peshwai')">Peshwai</button>
+  <button class="btn" onclick="filterSelection('irkal')"> Irkal</button>
+   <button class="btn" onclick="filterSelection('khun')">Khun</button>
+    <button class="btn" onclick="filterSelection('ikkat')">Ikkat</button>
+     <button class="btn" onclick="filterSelection('bhagalpuri')">Bhagalpuri</button>
+      <button class="btn" onclick="filterSelection('artsilk')">Art Silk</button>
+</div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column paithani">
+    <div class="content">
+    	<a href="saree/Paan_Mor_Brocket_Paithani.jpg">
+    <img src="saree/Paan_Mor_Brocket_Paithani.jpg" alt="Paan Mor Brocket Paithani" width="300" height="300"></a>
+      <h4>Paan Mor Brocket Paithani</h4>
+      <!-- <p>Lorem ipsum dolor..</p> -->
+    </div>
+  </div>
+
+  <div class="column banarasi">
+    <div class="content">
+    <a href="saree/Banarasi Saree.jpg">
+      <img src="saree/Banarasi Saree.jpg" alt="Banarasi  Saree" width="300" height="300"></a>
+      <h4>Banarasi  Saree</h4>
+      <!-- <p>Lorem ipsum dolor..</p> -->
+    </div>
+  </div>
+  <div class="column peshwai">
+    <div class="content">
+    	<a href="saree/Pure_Silk_Peshwai_Paithani.jpg">
+    <img src="saree/Pure_Silk_Peshwai_Paithani.jpg" alt="Pure Silk Peshwai Paithani" width="300" height="300"></a>
+      <h4>Pure Silk Peshwai</h4>
+      <!-- <p>Lorem ipsum dolor..</p> -->
+    </div>
+  </div>
+  
+  <div class="column irkal">
+    <div class="content">
+    	<a href="saree/irkal.jpg">
+      <img src="saree/irkal.jpg" alt="Irkal" width="300" height="300"></a>
+      <h4>Irkal</h4>
+      <!-- <p>Lorem ipsum dolor..</p> -->
+    </div>
+  </div>
+  <div class="column khun">
+    <div class="content">
+    	<a href="s>aree/Khaun.jpg">
+    <img src="saree/Khaun.jpg" alt="Khun"  width="300" height="300"></a>
+      <h4>Khun</h4>
+      <!-- <p>Lorem ipsum dolor..</p> -->
+    </div>
+  </div>
+  <div class="column ikkat">
+    <div class="content">
+    	<a href="saree/Ikkat.jpg">
+    <img src="saree/Ikkat.jpg" alt="Ikkat"  width="300" height="300"></a>
+      <h4>Ikkat Saree</h4>
+      <!-- <p>Lorem ipsum dolor..</p> -->
+    </div>
+  </div>
+
+  <div class="column bhagalpuri">
+    <div class="content">
+    	<a href="saree/Printed_bhagalpuri.jpg">
+      <img src="saree/Printed_bhagalpuri.jpg" alt="Printed Bhagalpuri"  width="300" height="300"></a>
+      <h4>Printed Bhagalpuri</h4>
+      <!-- <p>Lorem ipsum dolor..</p> -->
+    </div>
+  </div>
+  <div class="column artsilk">
+    <div class="content">
+    	<a href="saree/Art_silk.jpg">
+    <img src="saree/Art_silk.jpg" alt="Art Silk"  width="300" height="300"></a>
+      <h4>Art Silk</h4>
+      <!-- <p>Lorem ipsum dolor..</p> -->
+    </div>
+  </div>
+
+<!-- END GRID -->
+</div>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>
